@@ -85,6 +85,7 @@ a mini project to obfuscate strings/hex and const char strings/objective c strin
       // iOS only obj c
       protectAbsoluteNSString("HIDDEN", "HIDDEN", "HIDDEN");
       protectMeNSString(@"NOT HIDDEN", @"NOT HIDDEN", @"NOT HIDDEN");
+      protectMeNSString(FBEncrypt("HIDDEN"), FBEncrypt("HIDDEN"), FBEncrypt("HIDDEN"));
 
     }
 ```
