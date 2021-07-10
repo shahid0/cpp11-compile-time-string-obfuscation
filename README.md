@@ -1,6 +1,12 @@
 # cpp11-obfuscation
 a mini project to obfuscate strings/hex and const char strings/objective c strings look at the obfuscate.h file
 
+``
+In obfuscate.h change the key to anything you want .)
+HASH(("UIApplicationDidBecomeActiveNotification")
+HASH(("definitely not a key .)")
+``
+
 ```cpp
     OBFUSCATE("som text"); // OBFUSCATE const char strings
     OBFUSCATE("hidden");
