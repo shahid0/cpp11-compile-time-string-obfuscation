@@ -4,7 +4,7 @@ a mini project to obfuscate strings/hex and const char strings/objective c strin
 ```cpp
     OBFUSCATE("som text"); // OBFUSCATE const char strings
     OBFUSCATE("hidden");
-    OBFUSCATE("0x123456); // can do conversions
+    OBFUSCATE("0x123456"); // can do conversions
      
     /*
      * only ios can use FBEncrypt
