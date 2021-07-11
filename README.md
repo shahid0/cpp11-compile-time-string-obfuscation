@@ -2,12 +2,17 @@
 a mini project to obfuscate strings/hex and const char strings/objective c strings look at the obfuscate.h file
 
 ``
+Note you will need to enable c++11
+```
+
+``
 In obfuscate.h change the key to anything you want .)
 HASH(("UIApplicationDidBecomeActiveNotification")
 HASH(("definitely not a key .)")
 ``
 
 ```cpp
+
     OBFUSCATE("som text"); // OBFUSCATE const char strings
     OBFUSCATE("hidden");
     OBFUSCATE("0x123456"); // can do conversions
@@ -15,18 +20,18 @@ HASH(("definitely not a key .)")
     /*
      * only ios can use FBEncrypt
      */
-    FBEncrypt("some text); // OBFUSCATE NSStrings disable
+    FBEncrypt("some text"); // OBFUSCATE NSStrings disable
     FBEncrypt("hidden");
     FBEncrypt("0x123456"); // can do conversions
 
     OBFUSCATEHEX("0x12"); // OBFUSCATE hex 0x123456
     OBFUSCATEHEX("0x123456");
-    OBFUSCATEHEX("0x123456789); // can encrypt long hex
+    OBFUSCATEHEX("0x123456789"); // can encrypt long hex
 
     #define getRealOffset(offset) getAbsoluteOffset(OBFUSCATEHEX(offset))
     uint64_t getAbsoluteOffset(uint64_t offset);
     uint64_t getAbsoluteOffset(uint64_t offset){
-        return (base + offset)
+        return (base + offset); // base is an actual value.
     }
 
     #define protectAbsoluteChar(str1, str2, str3) protectMeChar(OBFUSCATE(str1), OBFUSCATE(str2), OBFUSCATE(str3))
@@ -41,7 +46,7 @@ HASH(("definitely not a key .)")
 
         str1 = OBFUSCATE("str1 VALUE HIDDEN");
         str2 = OBFUSCATE("str2 VALUE HIDDEN");
-        str3 = OBFUSCATE("str3 VALUE NOT HIDDEN");
+        str3 = OBFUSCATE("str3 VALUE HIDDEN");
 
         const char *mainValueH = OBFUSCATE("HIDDEN");                         // Contains a value to hide
         const char *mainValueNH = (const char *)"NOT HIDDEN";                 // Contains a value not to hide
@@ -64,7 +69,7 @@ HASH(("definitely not a key .)")
 
         str1 = FBEncrypt("str1 VALUE HIDDEN");
         str2 = FBEncrypt("str2 VALUE HIDDEN");
-        str3 = FBEncrypt("str3 VALUE NOT HIDDEN");
+        str3 = FBEncrypt("str3 VALUE HIDDEN");
 
         NSString *mainValueH = FBEncrypt("HIDDEN");                         // Contains a value to hide
         NSString *mainValueNH = @"NOT HIDDEN";                 // Contains a value not to hide
