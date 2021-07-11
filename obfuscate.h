@@ -57,8 +57,7 @@ constexpr uintptr_t vxCplHashPart1(char Ch, uintptr_t Hash) { return (vxCplHashP
 constexpr uintptr_t vxCplHash(const char* Str)			 { return (*Str) ? (vxCplHashPart1(*Str, vxCplHash(Str + 1))) : (0); }
 
 // Compile-time hashing macro, hash values changes using the first pseudorandom number in sequence
-#define r16Hash(Str) [NSString stringWithFormat:@"0x%08X", HASH(Str)]
-#define /*vx*/HASH(Str) (uintptr_t)(vxCplConstantify<vxCplHash(Str)>::Value ^ vxCplConstantify<vxCplRandom(1)>::Value)
+#define HASH(Str) (uintptr_t)(vxCplConstantify<vxCplHash(Str)>::Value ^ vxCplConstantify<vxCplRandom(1)>::Value)
 
 // Compile-time generator for list of indexes (0, 1, 2, ...)
 template <uintptr_t...> struct vxCplIndexList {};
