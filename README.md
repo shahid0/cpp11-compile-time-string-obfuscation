@@ -100,3 +100,7 @@ HASH(("definitely not a key .)")
 
     }
 ```
+
+#ORIGINAL SOURCE:
+http://www.rohitab.com/discuss/topic/39611-malware-related-compile-time-hacks-with-c11/
+`for those who didn't read the .h file here's original source you might have issues compiling it depending on your compiler but i have fixed it a bit and made it a bit more complex`
